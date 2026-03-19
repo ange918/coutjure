@@ -1,0 +1,733 @@
+/* ===========================
+   Base
+   =========================== */
+.lp { width: 100%; }
+
+.lp-section {
+  padding: 100px 0;
+}
+
+.lp-section__head {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.lp-section__head .section-subtitle {
+  margin-bottom: 0;
+}
+
+.lp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-bottom: 0.9rem;
+}
+
+.lp-eyebrow i { font-size: 1rem; }
+
+/* ===========================
+   HERO
+   =========================== */
+.lp-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 0 60px;
+}
+
+.lp-hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.lp-hero__blob--1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--accent-purple), transparent 70%);
+  top: -160px; left: -140px;
+  animation: float 9s ease-in-out infinite;
+}
+
+.lp-hero__blob--2 {
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, var(--accent-teal), transparent 70%);
+  bottom: -100px; right: -80px;
+  animation: floatAlt 12s ease-in-out infinite;
+}
+
+.lp-hero__blob--3 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, var(--accent-pink), transparent 70%);
+  top: 50%; right: 10%;
+  animation: float 14s ease-in-out infinite 2s;
+  opacity: 0.15;
+}
+
+.lp-hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: heroFadeUp 0.9s ease both;
+}
+
+.lp-hero__title {
+  font-family: 'Climate Crisis', cursive;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  margin: 0.3rem 0 1.1rem;
+  line-height: 1.02;
+  text-shadow: 0 0 100px rgba(124, 92, 252, 0.45);
+}
+
+.lp-hero__sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: var(--text-muted);
+  margin-bottom: 2.4rem;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.lp-hero__ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.lp-hero__ctas .btn-primary,
+.lp-hero__ctas .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.lp-hero__ctas i { font-size: 1.1rem; }
+
+.lp-hero__stats {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.lp-hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.lp-hero__stat-val {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 2.4rem;
+  color: var(--accent-teal);
+  line-height: 1;
+}
+
+.lp-hero__stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.lp-hero__scroll {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  font-size: 2rem;
+  animation: float 2.6s ease-in-out infinite;
+  opacity: 0.4;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.lp-hero__scroll:hover { opacity: 0.7; }
+
+/* ===========================
+   À PROPOS
+   =========================== */
+.lp-about {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.lp-about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.lp-about__img {
+  position: relative;
+}
+
+.lp-about__img img {
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  object-fit: cover;
+}
+
+.lp-about__badge {
+  position: absolute;
+  bottom: -18px;
+  right: -18px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  border-radius: 16px;
+  padding: 1.2rem 1.6rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(124, 92, 252, 0.4);
+}
+
+.lp-about__badge-num {
+  display: block;
+  font-family: 'Climate Crisis', cursive;
+  font-size: 2.2rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.lp-about__badge-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+}
+
+.lp-about__text p {
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+.lp-about__vals {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.lp-about__val {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.lp-about__val i {
+  font-size: 1.2rem;
+  color: var(--accent-purple);
+}
+
+/* ===========================
+   SERVICES
+   =========================== */
+.lp-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+
+.lp-service-card {
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 3px solid transparent;
+}
+
+.lp-service-card--purple { border-top-color: var(--accent-purple); }
+.lp-service-card--teal   { border-top-color: var(--accent-teal); }
+
+.lp-service-card__icon-wrap {
+  width: 50px; height: 50px;
+  border-radius: 12px;
+  background: rgba(124, 92, 252, 0.1);
+  border: 1px solid rgba(124, 92, 252, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.lp-service-card--teal .lp-service-card__icon-wrap {
+  background: rgba(34, 199, 169, 0.1);
+  border-color: rgba(34, 199, 169, 0.2);
+}
+
+.lp-service-card__icon-wrap i {
+  font-size: 1.5rem;
+  color: var(--accent-purple);
+}
+
+.lp-service-card--teal .lp-service-card__icon-wrap i {
+  color: var(--accent-teal);
+}
+
+.lp-service-card__title {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-top: 0.4rem;
+}
+
+.lp-service-card__price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+.lp-service-card__price--purple { color: var(--accent-purple); }
+.lp-service-card__price--teal   { color: var(--accent-teal); }
+
+.lp-service-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.lp-services__note {
+  text-align: center;
+  margin-top: 2.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ===========================
+   GALERIE
+   =========================== */
+.lp-gallery { overflow: hidden; padding-bottom: 80px; }
+
+.lp-band-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1rem;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.lp-band {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+
+.lp-band:hover { animation-play-state: paused; }
+
+.lp-band__item {
+  flex-shrink: 0;
+  width: 260px;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.lp-band__item:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 30px rgba(34, 199, 169, 0.2);
+  border-color: var(--accent-teal);
+}
+
+.lp-band__item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s;
+}
+
+.lp-band__item:hover img { filter: brightness(0.78); }
+
+/* ===========================
+   POURQUOI
+   =========================== */
+.lp-why {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.lp-why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.lp-why-card {
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lp-why-card__icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(124, 92, 252, 0.1);
+  border: 1px solid rgba(124, 92, 252, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.lp-why-card__icon i {
+  font-size: 1.6rem;
+  color: var(--accent-purple);
+}
+
+.lp-why-card:hover .lp-why-card__icon {
+  background: rgba(124, 92, 252, 0.2);
+  border-color: var(--accent-purple);
+}
+
+.lp-why-card__title {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.lp-why-card__desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.78;
+}
+
+/* ===========================
+   TÉMOIGNAGES
+   =========================== */
+.lp-testi__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+
+.lp-testi-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lp-testi-card__quote {
+  font-size: 2.8rem;
+  color: var(--accent-purple);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.lp-testi-card__text {
+  font-size: 0.93rem;
+  color: var(--text-muted);
+  line-height: 1.85;
+  font-style: italic;
+  flex: 1;
+}
+
+.lp-testi-card__stars { display: flex; gap: 3px; }
+.lp-testi-card__stars i { color: #F5C542; font-size: 1rem; }
+
+.lp-testi-card__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.lp-testi-card__avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.lp-testi-card__name {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.lp-testi-card__role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  color: var(--accent-teal);
+  font-weight: 500;
+}
+
+/* ===========================
+   CONTACT
+   =========================== */
+.lp-contact {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+}
+
+.lp-contact__layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.lp-contact__form-wrap {
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+}
+
+.lp-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.form-group label i { font-size: 0.95rem; }
+
+.form-group input,
+.form-group textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.93rem;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-muted); }
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.15);
+}
+
+.lp-contact__submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.lp-contact__success {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lp-contact__success i {
+  font-size: 3.5rem;
+  color: var(--accent-teal);
+}
+
+.lp-contact__success h3 {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 1.6rem;
+}
+
+.lp-contact__info {
+  background: var(--bg-deep);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.2rem 2rem;
+}
+
+.lp-contact__info-title {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 1.8rem;
+}
+
+.lp-contact__info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.lp-contact__info-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.lp-contact__info-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: rgba(124, 92, 252, 0.1);
+  border: 1px solid rgba(124, 92, 252, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lp-contact__info-icon i {
+  font-size: 1.1rem;
+  color: var(--accent-purple);
+}
+
+.lp-contact__info-item strong {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lp-contact__info-item p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.lp-contact__hours h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0.9rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lp-hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.lp-hours-grid span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.lp-hours-grid span:nth-child(even) {
+  color: var(--accent-teal);
+  font-weight: 500;
+}
+
+.lp-contact__map { margin-top: 1rem; }
+
+.lp-map-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  height: 360px;
+}
+
+.lp-map-wrap iframe {
+  width: 100%; height: 100%;
+  border: none;
+  display: block;
+  filter: invert(90%) hue-rotate(180deg);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 1024px) {
+  .lp-services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .lp-why__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .lp-section { padding: 70px 0; }
+
+  .lp-about__inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .lp-about__badge { bottom: 12px; right: 12px; }
+
+  .lp-testi__grid,
+  .lp-contact__layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .lp-services__grid,
+  .lp-why__grid { grid-template-columns: 1fr; }
+
+  .lp-hero__stats { gap: 2rem; }
+}
