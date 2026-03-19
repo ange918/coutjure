@@ -1,0 +1,106 @@
+Create a complete React + Vite multi-page website for a sewing salon called "Alex's Design".
+
+## Tech Stack
+- React + Vite
+- React Router v6
+- Plain CSS (no Tailwind, no CSS Modules — one global.css + per-component CSS files)
+- Google Fonts
+
+## Typography
+Import these fonts from Google Fonts in index.html:
+  - "Climate Crisis" → display font for all headings and the logo (variable font, use font-variation-settings)
+  - "DM Sans" → body text, nav links, paragraphs
+```html
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+```
+
+## Color Palette (extracted from dark UI screenshot)
+Use these exact CSS variables in :root {}:
+```css
+:root {
+  --bg-deep:        #0D1117;   /* near-black background */
+  --bg-card:        #161B27;   /* card/panel surfaces */
+  --bg-card-hover:  #1E2535;   /* card hover state */
+  --border:         #2A3147;   /* subtle borders */
+  --accent-purple:  #7C5CFC;   /* primary purple accent */
+  --accent-teal:    #22C7A9;   /* teal/green accent (icons, CTAs) */
+  --accent-pink:    #C45CF5;   /* violet/pink glow */
+  --text-primary:   #EAEEF6;   /* main text */
+  --text-muted:     #7A849A;   /* muted/secondary text */
+}
+```
+
+## Global CSS Rules
+- background: var(--bg-deep) on body
+- All h1, h2, h3: font-family: 'Climate Crisis', cursive; color: var(--text-primary)
+- Body text: font-family: 'DM Sans', sans-serif
+- Cards: background var(--bg-card), border 1px solid var(--border), border-radius 14px
+- Buttons: background linear-gradient(135deg, var(--accent-purple), var(--accent-pink)), color white, border-radius 8px, padding 12px 28px, font DM Sans 500
+- Smooth scroll: html { scroll-behavior: smooth }
+
+## Pages & Routing (React Router v6)
+### 1. Home (/)
+- Fullscreen hero: 
+  - Giant heading "Alex's Design" in Climate Crisis font, white
+  - Subtitle in DM Sans: "Couture sur mesure · Élégance & Précision · Cotonou, Bénin"
+  - Two CTA buttons: "Voir nos services" (purple gradient) + "Prendre RDV" (outlined teal)
+  - Floating gradient blobs in background (purple + teal, CSS radial-gradient, blurred, animated slowly with @keyframes float)
+- "Notre savoir-faire" section:
+  - 3 cards with icon (✂️ 👗 🧵), title, description
+  - Cards: Robes de soirée / Retouches express / Créations sur mesure
+  - Hover: card lifts up (translateY -6px), border glows with var(--accent-purple) box-shadow
+- "Nos chiffres" section: 3 stats — 10+ ans d'expérience, 500+ clientes satisfaites, 100% sur mesure
+  - Each stat number in Climate Crisis font, accent-teal color
+
+### 2. Services (/services)
+- Page title "Nos Services" in Climate Crisis
+- Grid of 4 service cards:
+  - Robe de mariée · Sur devis · "Chaque robe est une œuvre unique"
+  - Costume sur mesure · À partir de 120 000 FCFA · "Taillé pour vous"
+  - Retouche express · À partir de 5 000 FCFA · "Rapide et impeccable"
+  - Tenue de cérémonie · À partir de 60 000 FCFA · "Élégance pour chaque occasion"
+- Cards have colored top border (accent-purple or accent-teal, alternating)
+
+### 3. Gallery (/galerie)
+- Title "Nos Créations" in Climate Crisis
+- Masonry CSS grid (3 columns) with placeholder images from https://picsum.photos
+- Use different sizes: 400x500, 400x400, 400x600 etc.
+- Hover: scale(1.03) with brightness overlay and a teal border glow
+
+### 4. About (/a-propos)
+- Title "Notre Histoire"
+- Text about the salon's story (in French, make it creative and warm)
+- Values section: 3 cards — Passion, Précision, Personnalisation
+- Founder card: name "Alex", role "Fondatrice & Styliste", avatar placeholder from picsum.photos/100x100
+
+### 5. Contact (/contact)
+- Title "Contactez-nous"
+- 2-column layout:
+  - Left: contact form (Nom, Email, Téléphone, Message, button "Envoyer")
+    - Inputs styled: bg var(--bg-card), border var(--border), color var(--text-primary), focus border var(--accent-purple)
+  - Right: contact info
+    - 📍 Cotonou, Bénin
+    - 📞 +229 XX XX XX XX
+    - 💬 WhatsApp disponible
+    - 📸 Instagram: @alexsdesign
+- Google Maps iframe of Cotonou below the form
+
+## Header
+- Sticky, backdrop-filter: blur(16px), background rgba(13,17,23,0.85)
+- Left: "Alex's Design" in Climate Crisis font, color var(--accent-purple)
+- Right: nav links in DM Sans — Accueil · Services · Galerie · À propos · Contact
+- Active link: color var(--accent-teal), underline
+- Mobile: hamburger menu
+
+## Footer
+- Dark background var(--bg-deep), border-top 1px solid var(--border)
+- Logo, tagline, social icons (Instagram, Facebook, WhatsApp)
+- Copyright "© 2025 Alex's Design — Cotonou, Bénin"
+
+## Animations
+- Hero: h1 fades in + slides up on mount (CSS @keyframes, 0.8s)
+- Cards: fade-in on scroll via IntersectionObserver (add 'visible' class → opacity 1, translateY 0)
+- Gradient blobs in hero: slow infinite floating animation
+- Nav links: color transition 0.2s on hover
+
+## File Structure

@@ -1,0 +1,88 @@
+.services-page .page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+.service-card {
+  padding: 2rem 2rem 2rem;
+  border-top: 3px solid transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.service-card--purple {
+  border-top-color: var(--accent-purple);
+}
+
+.service-card--teal {
+  border-top-color: var(--accent-teal);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(124, 92, 252, 0.2);
+  background: var(--bg-card-hover);
+}
+
+.service-card--teal:hover {
+  box-shadow: 0 12px 40px rgba(34, 199, 169, 0.18);
+}
+
+.service-card__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.service-card__title {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.service-card__price {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--accent-teal);
+  letter-spacing: 0.02em;
+}
+
+.service-card--purple .service-card__price {
+  color: var(--accent-purple);
+}
+
+.service-card__desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-top: 0.2rem;
+}
+
+.services__note {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.services__note p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
