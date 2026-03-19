@@ -252,67 +252,137 @@
    =========================== */
 .lp-services__grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.4rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
 }
 
 .lp-service-card {
-  padding: 2rem 1.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  border-top: 3px solid transparent;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.lp-service-card--purple { border-top-color: var(--accent-purple); }
-.lp-service-card--teal   { border-top-color: var(--accent-teal); }
+.lp-service-card--purple:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(124, 92, 252, 0.25);
+  border-color: var(--accent-purple);
+}
 
+.lp-service-card--teal:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(34, 199, 169, 0.22);
+  border-color: var(--accent-teal);
+}
+
+/* Header coloré */
+.lp-service-card__header {
+  position: relative;
+  padding: 2rem 2rem 1.8rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.lp-service-card--purple .lp-service-card__header {
+  background: linear-gradient(135deg, rgba(124, 92, 252, 0.18) 0%, rgba(196, 92, 245, 0.1) 100%);
+  border-bottom: 1px solid rgba(124, 92, 252, 0.2);
+}
+
+.lp-service-card--teal .lp-service-card__header {
+  background: linear-gradient(135deg, rgba(34, 199, 169, 0.15) 0%, rgba(34, 199, 169, 0.05) 100%);
+  border-bottom: 1px solid rgba(34, 199, 169, 0.2);
+}
+
+/* Numéro décoratif */
+.lp-service-card__num {
+  font-family: 'Climate Crisis', cursive;
+  font-size: 3.5rem;
+  line-height: 1;
+  opacity: 0.12;
+  letter-spacing: 0;
+  transition: opacity 0.3s;
+}
+
+.lp-service-card--purple .lp-service-card__num { color: var(--accent-purple); }
+.lp-service-card--teal   .lp-service-card__num { color: var(--accent-teal); }
+
+.lp-service-card:hover .lp-service-card__num { opacity: 0.22; }
+
+/* Icône */
 .lp-service-card__icon-wrap {
-  width: 50px; height: 50px;
-  border-radius: 12px;
-  background: rgba(124, 92, 252, 0.1);
-  border: 1px solid rgba(124, 92, 252, 0.2);
+  width: 60px; height: 60px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s;
+  flex-shrink: 0;
+}
+
+.lp-service-card--purple .lp-service-card__icon-wrap {
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  box-shadow: 0 8px 24px rgba(124, 92, 252, 0.4);
 }
 
 .lp-service-card--teal .lp-service-card__icon-wrap {
-  background: rgba(34, 199, 169, 0.1);
-  border-color: rgba(34, 199, 169, 0.2);
+  background: linear-gradient(135deg, var(--accent-teal), #1aa8ee);
+  box-shadow: 0 8px 24px rgba(34, 199, 169, 0.35);
 }
 
 .lp-service-card__icon-wrap i {
-  font-size: 1.5rem;
-  color: var(--accent-purple);
+  font-size: 1.8rem;
+  color: #fff;
 }
 
-.lp-service-card--teal .lp-service-card__icon-wrap i {
-  color: var(--accent-teal);
+/* Body */
+.lp-service-card__body {
+  padding: 1.6rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
 }
 
 .lp-service-card__title {
   font-family: 'Climate Crisis', cursive;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   color: var(--text-primary);
-  margin-top: 0.4rem;
+}
+
+.lp-service-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.78;
+  flex: 1;
 }
 
 .lp-service-card__price {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 0.82rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-top: 0.4rem;
 }
 
-.lp-service-card__price--purple { color: var(--accent-purple); }
-.lp-service-card__price--teal   { color: var(--accent-teal); }
+.lp-service-card--purple .lp-service-card__price {
+  color: var(--accent-purple);
+  background: rgba(124, 92, 252, 0.1);
+  border: 1px solid rgba(124, 92, 252, 0.25);
+}
 
-.lp-service-card__desc {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  line-height: 1.75;
+.lp-service-card--teal .lp-service-card__price {
+  color: var(--accent-teal);
+  background: rgba(34, 199, 169, 0.1);
+  border: 1px solid rgba(34, 199, 169, 0.25);
 }
 
 .lp-services__note {
@@ -703,8 +773,8 @@
 /* ===========================
    RESPONSIVE
    =========================== */
-@media (max-width: 1024px) {
-  .lp-services__grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) {
+  .lp-services__grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px) {

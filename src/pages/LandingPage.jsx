@@ -3,10 +3,10 @@ import './LandingPage.css'
 
 /* ─── DATA ──────────────────────────────────── */
 const services = [
-  { icon: 'bx bx-heart-circle', title: 'Robe de mariée',       price: 'Sur devis',                  desc: "Chaque robe est une œuvre unique, taillée avec précision pour le plus beau jour de votre vie.", accent: 'purple' },
-  { icon: 'bx bx-user',         title: 'Costume sur mesure',   price: 'À partir de 120 000 FCFA',   desc: "Taillé pour vous — une coupe impeccable qui épouse parfaitement votre silhouette.",             accent: 'teal'   },
-  { icon: 'bx bx-scissors',     title: 'Retouche express',     price: 'À partir de 5 000 FCFA',     desc: "Rapide et impeccable — vos ajustements réalisés dans les meilleurs délais.",                    accent: 'purple' },
-  { icon: 'bx bx-star-half',    title: 'Tenue de cérémonie',  price: 'À partir de 60 000 FCFA',    desc: "Élégance pour chaque occasion — des créations qui subliment vos moments festifs.",               accent: 'teal'   },
+  { icon: 'bx bx-diamond',      title: 'Robe de mariée',      price: 'Sur devis',                desc: "Chaque robe est une œuvre unique, taillée avec précision pour le plus beau jour de votre vie.",  accent: 'purple', num: '01' },
+  { icon: 'bx bx-user',         title: 'Costume sur mesure',  price: 'Dès 120 000 FCFA',         desc: "Taillé pour vous — une coupe impeccable qui épouse parfaitement votre silhouette.",              accent: 'teal',   num: '02' },
+  { icon: 'bx bx-scissors',     title: 'Retouche express',    price: 'Dès 5 000 FCFA',           desc: "Rapide et impeccable — vos ajustements réalisés dans les meilleurs délais.",                     accent: 'teal',   num: '03' },
+  { icon: 'bx bx-crown',        title: 'Tenue de cérémonie',  price: 'Dès 60 000 FCFA',          desc: "Élégance pour chaque occasion — des créations qui subliment vos moments festifs.",                accent: 'purple', num: '04' },
 ]
 
 const whyUs = [
@@ -145,13 +145,18 @@ export default function LandingPage() {
           </div>
           <div className="lp-services__grid">
             {services.map((s, i) => (
-              <div key={i} className={`card lp-service-card lp-service-card--${s.accent} fade-in`} ref={ref} style={{ transitionDelay: `${i * 0.1}s` }}>
-                <div className="lp-service-card__icon-wrap">
-                  <i className={s.icon} />
+              <div key={i} className={`lp-service-card lp-service-card--${s.accent} fade-in`} ref={ref} style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="lp-service-card__header">
+                  <span className="lp-service-card__num">{s.num}</span>
+                  <div className="lp-service-card__icon-wrap">
+                    <i className={s.icon} />
+                  </div>
                 </div>
-                <h3 className="lp-service-card__title">{s.title}</h3>
-                <span className={`lp-service-card__price lp-service-card__price--${s.accent}`}>{s.price}</span>
-                <p className="lp-service-card__desc">{s.desc}</p>
+                <div className="lp-service-card__body">
+                  <h3 className="lp-service-card__title">{s.title}</h3>
+                  <p className="lp-service-card__desc">{s.desc}</p>
+                  <span className={`lp-service-card__price`}>{s.price}</span>
+                </div>
               </div>
             ))}
           </div>
