@@ -33,7 +33,7 @@
 }
 
 .footer__nav a {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   color: var(--text-muted);
   transition: color 0.2s ease;

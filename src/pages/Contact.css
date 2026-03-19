@@ -32,7 +32,7 @@
 }
 
 .form-group label {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -46,7 +46,7 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text-primary);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.97rem;
   padding: 11px 14px;
   outline: none;
@@ -126,7 +126,7 @@
 
 .contact__info-item strong {
   display: block;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
   color: var(--text-primary);
